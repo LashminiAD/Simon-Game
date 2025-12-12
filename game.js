@@ -8,13 +8,14 @@ var level = 0; //game level
 
 
 //detects 1st keypress - start the game
-$(document).keypress( function(){
+$(document).on("keypress touchstart", function(){
     if (!started) {
         $("#level-title").text("Level " + level);
         nextSequence();
         started=true;
     }
 });
+
 
  // detects button click handler
     $(".btn").click(function(){
@@ -48,7 +49,7 @@ $(document).keypress( function(){
                 $("body").removeClass("game-over");
             },200);
 
-            $("#level-title").text("GAME OVER, Press any key to Restart");
+            $("#level-title").text("GAME OVER, Press any key / tap to Restart");
 
             startOver();
        }
